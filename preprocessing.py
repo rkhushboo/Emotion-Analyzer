@@ -16,13 +16,13 @@ import pandas as pd
 def find_data_dir(start_path: Path, max_levels=3):
     cur = start_path
     for _ in range(max_levels + 1):
-        candidate = cur / 'data'
+        candidate = cur / 
         if candidate.exists() and candidate.is_dir():
             return candidate
         if cur.parent == cur:
             break
         cur = cur.parent
-    return start_path / 'data'
+    return start_path / 
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = find_data_dir(BASE_DIR)
