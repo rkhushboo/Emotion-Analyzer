@@ -13,19 +13,20 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pandas as pd
 
 # Robust data directory discovery: look up to 3 parents for a 'data' folder
-def find_data_dir(start_path: Path, max_levels=3):
-    cur = start_path
-    for _ in range(max_levels + 1):
-        candidate = cur / 
-        if candidate.exists() and candidate.is_dir():
-            return candidate
-        if cur.parent == cur:
-            break
-        cur = cur.parent
-    return start_path / 
+# def find_data_dir(start_path: Path, max_levels=3):
+#     cur = start_path
+#     for _ in range(max_levels + 1):
+#         candidate = cur / 
+#         if candidate.exists() and candidate.is_dir():
+#             return candidate
+#         if cur.parent == cur:
+#             break
+#         cur = cur.parent
+#     return start_path / 
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = find_data_dir(BASE_DIR)
+# DATA_DIR = find_data_dir(BASE_DIR)
+DATA_DIR = BASE_DIR
 
 EMOTICONS_DICT = {
     ":)": "smile",
